@@ -1,0 +1,14 @@
+<html lang='en'>
+<head>
+  <title>Nyaplot</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+  <script><%= Nyaplot.generate_init_code  %></script>
+</head>
+<body>
+  <%= @frame.generate_body %>
+  <form method="post" action="/">
+    <%= str=""; @p.each{|k, v| str += "#{k}: <input type=\"text\" name=\"#{k}\" value=\"#{v}\"><br>"}; str %>
+    <input type="submit" value="submit"/>
+  </form>
+</body>
+</html>
